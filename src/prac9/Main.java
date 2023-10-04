@@ -95,11 +95,11 @@ class EmployeeView extends JFrame {
     }
 
     public void setHours(double hours){
-        hoursLabel.setText("Hours: " + hours);
+        hoursLabel.setText("Hours worked: " + hours);
     }
 
     public void setRate(double rate){
-        rateLabel.setText("Rate: " + rate);
+        rateLabel.setText("Hourly rate: " + rate);
     }
 
     public void addCalculateListener(ActionListener listener) {
