@@ -1,6 +1,7 @@
 package prac9;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -24,6 +25,9 @@ class EmployeeController {
             double salary = model.calculateSalary();
             System.out.printf("%s, salary: %s",model, salary);
             view.setSalary(salary);
+            view.setName(name);
+            view.setHours(hoursWorked);
+            view.setRate(hourlyRate);
         }
     }
 }
@@ -37,7 +41,7 @@ public class Main {
 }
 
 
-class EmployeeView {
+class EmployeeView extends JFrame {
     private JFrame frame;
     private JLabel nameLabel;
     private JLabel rateLabel;
@@ -46,9 +50,10 @@ class EmployeeView {
     private JButton calculateButton;
 
     public EmployeeView() {
+        setLayout(new FlowLayout());
         frame = new JFrame("Employee Salary Calculator");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(300, 200);
+        frame.setSize(300, 100);
 
         JPanel panel = new JPanel();
         frame.add(panel);
@@ -84,6 +89,17 @@ class EmployeeView {
 
     public void setSalary(double salary) {
         salaryLabel.setText("Salary: " + salary);
+    }
+    public void setName(String name){
+        nameLabel.setText(("Name: " + name));
+    }
+
+    public void setHours(double hours){
+        hoursLabel.setText("Hours: " + hours);
+    }
+
+    public void setRate(double rate){
+        rateLabel.setText("Rate: " + rate);
     }
 
     public void addCalculateListener(ActionListener listener) {
