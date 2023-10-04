@@ -11,7 +11,6 @@ public class Phone {
         if (phone.charAt(0) != '+') {
             phone = "+7" + phone.substring(1);
         }
-
         String regex = "(\\+\\d+)(\\d{3})(\\d{3})(\\d{4})$";
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(phone);
