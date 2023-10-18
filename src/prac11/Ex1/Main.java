@@ -34,6 +34,7 @@ class Ex1{
             catch (NumberFormatException err){
                 throw new ExceptionIncorrectINN("Incorrect INN");
             }
+
         }
     }
 
