@@ -1,4 +1,4 @@
-package prac16;
+package prac16.Ex2;
 
 public class VictorianChair implements IChair {
 
