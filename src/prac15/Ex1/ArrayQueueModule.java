@@ -1,25 +1,23 @@
 package prac15.Ex1;
 
-
-public class ArrayQueueModule {
-
 // INV: FIFO (First in - first out)
 //      0 <= size <= q.length - 1
 //      queue[head]..queue[tail] - queue
 //      queue - Singleton
 //      q.length = 2**x
-    private Object[] items = new Object[SIZE];
+public class ArrayQueueModule {
+
+    private Object[] items;
     protected int front, rear;
     protected static final int SIZE = 16;
 
-    // PRE: queue - null
-    // POST: queue.size = 0;
-    //       q.length = 16;
+    public static ArrayQueueModule instance;
+
     private ArrayQueueModule(){
+        items = new Object[SIZE];
         front = -1;
         rear = -1;
     }
-
     public boolean isEmpty() {
         return front == rear;
     }
@@ -33,7 +31,6 @@ public class ArrayQueueModule {
         }
         return false;
     }
-
 
     public Object dequeue(){
         Object element;
@@ -59,7 +56,7 @@ public class ArrayQueueModule {
 
     }
 
-    public void enqueue(int element){
+    public void enqueue(Object element){
         // if queue is full
         if (isFull()) {
             System.out.println("Queue is full");
@@ -71,16 +68,32 @@ public class ArrayQueueModule {
             items[rear] = element;
         }
     }
+
     public boolean clear(){
         boolean temp = !isEmpty();
-        front=rear=0;
-        return temp;
+        //front=rear=0;
         Object[] new_items = new Object[SIZE];
         System.arraycopy(items, front, new_items, 0, Math.abs(front-rear));
         rear = Math.abs(front-rear);
         front = 0;
         items = new_items;
+        return temp;
+    }
+    public Object element(){
+        if(isEmpty()){
+            throw new IndexOutOfBoundsException("Queue is empty");
+        }
+        return items[front];
+    }
 
+    public int size(){
+        return items.length;
+    }
 
+    public static ArrayQueueModule getInstance(){
+        if(instance == null){
+            instance = new ArrayQueueModule();
+        }
+        return instance;
     }
 }
