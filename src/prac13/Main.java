@@ -1,5 +1,4 @@
 package prac13;
-
 import prac13.Ex1.Ex1;
 import prac13.Ex2.MyArray;
 import prac13.Ex3.Files;
@@ -7,8 +6,6 @@ import prac13.Ex4.Solution;
 
 import java.util.*;
 
-// Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
-// then press Enter. You can now see whitespace characters in your code.
 public class Main {
     public static void main(String[] args) {
         ArrayList<String> arr1 = new ArrayList<>(Arrays.asList(
@@ -73,5 +70,3 @@ public class Main {
     }
 
 }
-
-

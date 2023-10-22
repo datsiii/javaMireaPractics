@@ -2,8 +2,6 @@ package prac12;
 
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Objects;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -13,17 +11,6 @@ class Animal{}
 class Test extends Animal implements Serializable {}
 public class Main{
     public static void main(String[] args){
-      /*  String s = "qwe";
-        Test t = new Test();
-        Double q = 1.2;
-        MyClass<String,Test, Double> A = new MyClass<>(s, t, q);
-        A.printClassNames();*/
-
-        /*
-        ArrayList<Integer> list = new ArrayList<>(Arrays.asList(1, 2 ,3));
-        MinMax<Integer> A = new MinMax(list);
-        System.out.println(A.findMax() + " " + A.findMin());*/
-
         int a = 5;
         double b = 2.5;
         System.out.println("Sum: " + Calculator.sum(a, b));
