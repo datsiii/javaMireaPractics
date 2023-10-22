@@ -8,7 +8,7 @@ public class ArrayQueueModule {
 //      queue[head]..queue[tail] - queue
 //      queue - Singleton
 //      q.length = 2**x
-    private int[] items = new int[SIZE];
+    private Object[] items = new Object[SIZE];
     protected int front, rear;
     protected static final int SIZE = 16;
 
@@ -74,6 +74,13 @@ public class ArrayQueueModule {
     public boolean clear(){
         boolean temp = !isEmpty();
         front=rear=0;
+        return temp;
+        Object[] new_items = new Object[SIZE];
+        System.arraycopy(items, front, new_items, 0, Math.abs(front-rear));
+        rear = Math.abs(front-rear);
+        front = 0;
+        items = new_items;
+
 
     }
 }
