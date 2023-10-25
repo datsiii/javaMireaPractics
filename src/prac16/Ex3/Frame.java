@@ -3,6 +3,7 @@ package prac16.Ex3;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.Serial;
 
 import javax.swing.JFrame;
 import javax.swing.ButtonGroup;
@@ -57,6 +58,7 @@ public class Frame extends JFrame{
     }
     class ExitAction extends AbstractAction
     {
+        @Serial
         private static final long serialVersionUID = 1L;
         ExitAction() {
             putValue(NAME, "Exit");
